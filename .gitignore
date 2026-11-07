@@ -1,39 +1,11 @@
-
-# Environment secrets
 .env
 .env.*
 !.env.example
-
-# Python
 .venv/
 __pycache__/
 *.py[cod]
-
-# Next.js
-web/.next/
-web/node_modules/
-
-# Preserve local frontend Git history backup
-web/.git-frontend-backup/
-
-# Local secrets
-.env
-.env.*
-!.env.example
-web/.env
-web/.env.*
-
-# Python
-.venv/
-__pycache__/
-*.py[cod]
-
-# Next.js
-web/node_modules/
-web/.next/
-web/out/
-
-# Old Git metadata and system files
-web/.git-frontend-backup/
 .DS_Store
-**/.DS_Store
+web/.env*
+web/node_modules/
+web/.next/
+web/.git-frontend-backup/
