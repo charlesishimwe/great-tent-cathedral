@@ -96,3 +96,5 @@ export default async function AdminPage() {
     </main>
   );
 }
+
+export const instant = false;

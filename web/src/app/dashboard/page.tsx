@@ -179,3 +179,5 @@ export default async function DashboardPage() {
 
 
 
+
+export const instant = false;
