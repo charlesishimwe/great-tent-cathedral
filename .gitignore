@@ -11,3 +11,5 @@ web/.next/
 web/.git-frontend-backup/
 .vercel
 .env*
+
+*.tsbuildinfo
