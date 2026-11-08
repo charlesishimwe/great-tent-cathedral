@@ -9,3 +9,5 @@ web/.env*
 web/node_modules/
 web/.next/
 web/.git-frontend-backup/
+.vercel
+.env*
