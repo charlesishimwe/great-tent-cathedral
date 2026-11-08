@@ -1,10 +1,13 @@
 import os
+import logging
 from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from supabase import Client, create_client
+
+logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(PROJECT_ROOT / ".env")
@@ -72,6 +75,7 @@ def get_my_profile(authorization: str | None = Header(default=None)):
         )
 
     if not authorization or not authorization.startswith("Bearer "):
+        logger.warning("Profile authentication rejected: authorization header missing or invalid.")
         raise HTTPException(
             status_code=401,
             detail="A valid Bearer access token is required.",
@@ -90,6 +94,7 @@ def get_my_profile(authorization: str | None = Header(default=None)):
         user = user_response.user
 
         if user is None:
+            logger.warning("Profile authentication rejected: Supabase returned no user.")
             raise HTTPException(
                 status_code=401,
                 detail="Invalid or expired access token.",
@@ -117,6 +122,7 @@ def get_my_profile(authorization: str | None = Header(default=None)):
     except HTTPException:
         raise
     except Exception:
+        logger.exception("Backend profile request failed")
         raise HTTPException(
             status_code=401,
             detail="Unable to authenticate or retrieve this profile.",
