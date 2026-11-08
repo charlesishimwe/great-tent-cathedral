@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     !requestedNext.startsWith("//") &&
     !requestedNext.includes("\\")
       ? requestedNext
-      : "/dashboard";
+      : "/";
 
   if (code) {
     const supabase = await createClient();
