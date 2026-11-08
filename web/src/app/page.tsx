@@ -249,7 +249,7 @@ export default function Home() {
                       fill
                       sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 20vw"
                       quality={90}
-                      className="object-cover transition duration-700 group-hover:scale-105"
+                      className="object-contain transition duration-700"
                     />
                   </div>
 
