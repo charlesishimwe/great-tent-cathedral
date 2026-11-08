@@ -1,4 +1,3 @@
-
 export type Language = {
   name: string;
   nativeName: string;
@@ -69,7 +68,6 @@ export const languages: Language[] = [
     nativeName: "Español",
     url: "https://t.me/+YuSQVC8jcYQ0ZTcx",
     status: "active",
-    flag: "🇪🇸",
+    flag: "🇵🇷",
   },
 ];
-
